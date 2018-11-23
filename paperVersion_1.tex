@@ -1,0 +1,221 @@
+\documentclass{article}
+
+% spanish-inputenc
+% longtable for reportable
+% echo in chunk
+% results in latex (results=tex)
+% par(mfrow=c(filas,columnas))
+% stargazer and report table packages
+
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+
+\usepackage{Sweave}
+\begin{document}
+\input{paperVersion_1-concordance}
+
+LOS INDICES DEL MUNDO
+
+
+Por: Estrella Delcurso
+
+
+Introducción
+
+Aqui les presento mi investigacion sobre diversos indices sociales en el mundo. Los indices los conseguí de wikipedia, espero que les gusten mucho.
+
+
+Exploración Univariada
+
+En esta sección exploro cada índice.
+
+
+
+
+Este es el comportamiento de las variables a estudiar. Veamos su tabla de frecuencias:
+
+% latex table generated in R 3.5.0 by xtable 1.8-3 package
+% Fri Nov 23 20:28:51 2018
+\begingroup\footnotesize
+\begin{longtable}{llrrr}
+\caption{Tablas de Frecuencia de la variables en estudio} \\ 
+ \textbf{Variable} & \textbf{Levels} & $\mathbf{n}$ & $\mathbf{\%}$ & $\mathbf{\sum \%}$ \\ 
+  \hline \hline
+WorldFreedom & 1 very bad & 46 & 24.7 & 24.7 \\ 
+   & 3 middle & 56 & 30.1 & 54.8 \\ 
+   & 5 very good & 84 & 45.2 & 100.0 \\ 
+   \hline
+ & all & 186 & 100.0 &  \\ 
+   \hline
+\hline
+EconomicFreedom & 1 very bad & 18 & 9.7 & 9.7 \\ 
+   & 2 bad & 65 & 35.0 & 44.6 \\ 
+   & 3 middle & 71 & 38.2 & 82.8 \\ 
+   & 4 good & 26 & 14.0 & 96.8 \\ 
+   & 5 very good & 6 & 3.2 & 100.0 \\ 
+   \hline
+ & all & 186 & 100.0 &  \\ 
+   \hline
+\hline
+PressFreedom & 1 very bad & 20 & 10.8 & 10.8 \\ 
+   & 2 bad & 44 & 23.7 & 34.4 \\ 
+   & 3 middle & 60 & 32.3 & 66.7 \\ 
+   & 4 good & 45 & 24.2 & 90.9 \\ 
+   & 5 very good & 17 & 9.1 & 100.0 \\ 
+   \hline
+ & all & 186 & 100.0 &  \\ 
+   \hline
+\hline
+Democracy & 1 very bad & 50 & 26.9 & 26.9 \\ 
+   & 2 bad & 40 & 21.5 & 48.4 \\ 
+   & 4 good & 77 & 41.4 & 89.8 \\ 
+   & 5 very good & 19 & 10.2 & 100.0 \\ 
+   \hline
+ & all & 186 & 100.0 &  \\ 
+   \hline
+\hline
+\hline
+\label{}
+\end{longtable}
+\endgroup
+
+Una vista gráfica a lo anterior la tenemos a continuación:
+
+\includegraphics{paperVersion_1-barplots}
+
+
+Podemos mostrar los estadísticos de cada variable:
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, Nov 23, 2018 - 20:28:52
+\begin{table}[!htbp] \centering 
+  \caption{Medidas estadísticas} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{Median} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+gdp & 186 & 21,667.200 & 13,000 & 700 & 139,100 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, Nov 23, 2018 - 20:28:52
+\begin{table}[!htbp] \centering 
+  \caption{Medidas estadísticas} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Median} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Min} \\ 
+\hline \\[-1.8ex] 
+FreedomintheWorld & 186 & 3 & 5 & 1 \\ 
+IndexofEconomicFreedom & 186 & 3 & 5 & 1 \\ 
+PressFreedomIndex & 186 & 3 & 5 & 1 \\ 
+DemocracyIndex & 186 & 4 & 5 & 1 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+Exploración Bivariada
+
+En este trabajo estamos interesados en el impacto de los otros indices en el nivel de Democracia. Veamos las relaciones bivariadas que tiene esta variable con todas las demás:
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, Nov 23, 2018 - 20:28:52
+\begin{table}[!htbp] \centering 
+  \caption{Correlación de GDP con las demás variables} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+FreedomintheWorld & IndexofEconomicFreedom & PressFreedomIndex & DemocracyIndex \\ 
+\hline \\[-1.8ex] 
+$0.247$ & $0.588$ & $0.328$ & $0.356$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+Veamos la correlación entre las variables independientes:
+
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, Nov 23, 2018 - 20:28:52
+\begin{table}[!htbp] \centering 
+  \caption{Correlación entre variables independientes} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & FreedomintheWorld & IndexofEconomicFreedom & PressFreedomIndex & DemocracyIndex \\ 
+\hline \\[-1.8ex] 
+FreedomintheWorld & 1 &  &  &  \\ 
+IndexofEconomicFreedom & 0.48 & 1 &  &  \\ 
+PressFreedomIndex & 0.83 & 0.52 & 1 &  \\ 
+DemocracyIndex & 0.89 & 0.58 & 0.76 & 1 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+
+
+Finalmente, vemos los modelos propuestos. Primero sin el índice de democracia como independiente, y luego con éste:
+
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, Nov 23, 2018 - 20:28:52
+\begin{table}[!htbp] \centering 
+  \caption{Modelos de Regresión} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{gdp} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ FreedomintheWorld & $-$2,582.285 & $-$5,505.874$^{**}$ \\ 
+  & (1,579.153) & (2,305.879) \\ 
+  & & \\ 
+ IndexofEconomicFreedom & 14,823.900$^{***}$ & 13,575.000$^{***}$ \\ 
+  & (1,779.269) & (1,910.907) \\ 
+  & & \\ 
+ PressFreedomIndex & 3,569.733 & 3,570.992 \\ 
+  & (2,326.908) & (2,314.236) \\ 
+  & & \\ 
+ DemocracyIndex &  & 4,103.246$^{*}$ \\ 
+  &  & (2,369.556) \\ 
+  & & \\ 
+ Constant & $-$19,594.750$^{***}$ & $-$18,067.700$^{***}$ \\ 
+  & (4,707.167) & (4,763.864) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 186 & 186 \\ 
+R$^{2}$ & 0.355 & 0.366 \\ 
+Adjusted R$^{2}$ & 0.345 & 0.352 \\ 
+Residual Std. Error & 19,424.840 (df = 182) & 19,319.060 (df = 181) \\ 
+F Statistic & 33.455$^{***}$ (df = 3; 182) & 26.117$^{***}$ (df = 4; 181) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
